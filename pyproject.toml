@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "flask-kubernetes-practice"
+version = "0.1.0"
+description = ""
+authors = ["cobriensr <charles.a.obrien@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.0.3"
+flask-sqlalchemy = "^3.1.1"
+psycopg2-binary = "^2.9.9"
+gunicorn = "^23.0.0"
+python-dotenv = "^1.0.1"
+black = "^24.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
