@@ -1,4 +1,4 @@
-FROM python:3.12.6-slim as python-base
+FROM python:3.12.6-slim AS python-base
 
 # Poetry configuration
 ENV PYTHONUNBUFFERED=1 \
