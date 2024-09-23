@@ -1,0 +1,8 @@
+#postgres-storage.yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: postgres-storage
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: pd-ssd
