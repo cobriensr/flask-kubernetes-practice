@@ -1,4 +1,4 @@
-FROM python:3.12.6-slim AS python-base
+FROM python:alpine AS python-base
 
 # Poetry configuration
 ENV PYTHONUNBUFFERED=1 \
@@ -15,12 +15,12 @@ ENV PYTHONUNBUFFERED=1 \
 ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 
 # Install poetry
-RUN apt-get update \
-    && apt-get install --no-install-recommends -y \
+RUN apk update \
+    && apk add --no-cache \
     curl \
     && curl -sSL https://install.python-poetry.org | python3 - \
-    && apt-get purge --auto-remove -y curl \
-    && rm -rf /var/lib/apt/lists/*
+    && apk del curl \
+    && rm -rf /var/cache/apk/*
 
 # Copy poetry.lock* in case it doesn't exist in the repo
 WORKDIR $PYSETUP_PATH
